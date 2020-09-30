@@ -1,0 +1,5 @@
+.home-component:hover{
+    border: 5px solid #f9a51a !important;
+    border-radius: 20px !important;
+    z-index: 2;
+}
