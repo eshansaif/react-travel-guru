@@ -9,10 +9,12 @@ body {
   background-image: url('resources/Image/Rectangle\ 1.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 body:after {
-  position: absolute;
+  position: fixed;
   content: " ";
   top: 0;
   left: 0;

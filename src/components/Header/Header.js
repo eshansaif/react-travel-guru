@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
 import Container from '@material-ui/core/Container';
 import './Header.css';
-import logo from '../../resources/Logo.png';
+import logo from '../../resources/Logo1.png';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -12,7 +12,7 @@ const Header = () => {
       <Navbar expand="lg" className="font-weight-bold">
             <Navbar.Brand href="#home">
                 <Link to="/home">
-                    <img
+                    <img style={{filter:'invert(100%)'}}
                     width="120px"
                     height="56"
                     className="d-inline-block align-top text-light"

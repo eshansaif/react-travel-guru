@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import NotFound from './components/NotFound/NotFound';
 import Booking from './components/Booking/Booking';
+import Hotel from './components/Hotel/Hotel';
 
 function App() {
   return (
@@ -22,8 +23,11 @@ function App() {
         <Route path="/home">
           <Home></Home>
         </Route>
-        <Route path="/booking/destination/:dest_id">
+        <Route path="/booking/:dest_id">
           <Booking></Booking>
+        </Route>
+        <Route path="/hotel/:dest_id">
+          <Hotel></Hotel>
         </Route>
         <Route path="*">
           <NotFound></NotFound>

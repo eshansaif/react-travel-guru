@@ -1,0 +1,51 @@
+[
+  {
+    "hotel_id": 2,
+    "hotel_image":"https://iili.io/2Ecxgp.png",
+    "hotel_title":"Apartment in Lost Panorama",
+    "guest_capacity":"6",
+    "bedrooms":"2",
+    "bed_per_rooms":"1",
+    "bathroom":"3",
+    "other_facilities":"Wifi | Air conditioning | Kitchen",
+    "cancellation_flexibility":"Cancellation flexibility not available",
+    "destination_id": 3,
+    "destination_name": "Sajek",
+    "rating":"4.9",
+    "num_of_review":"20",
+    "rent_per_night":"34"
+  },
+  {
+    "hotel_id": 3,
+    "hotel_image":"https://iili.io/2Ecuet.png",
+    "hotel_title":"AR Lounge & Pool (r&r + b&b)",
+    "guest_capacity":"8",
+    "bedrooms":"2",
+    "bed_per_rooms":"3",
+    "bathroom":"4",
+    "other_facilities":"Wifi | Air conditioning | Kitchen",
+    "cancellation_flexibility":"Cancellation flexibility available",
+    "destination_id": 1,
+    "destination_name": "Sajek",
+    "rating":"4.5",
+    "num_of_review":"35",
+    "rent_per_night":"34"
+  },
+  {
+    "hotel_id": 1,
+    "hotel_image":"https://iili.io/2EcqXa.png",
+    "hotel_title":"Light bright airy stylish apt & safe peaceful stay",
+    "guest_capacity":"4",
+    "bedrooms":"2",
+    "bed_per_rooms":"2",
+    "bathroom":"2",
+    "other_facilities":"Wifi | Air conditioning | Kitchen",
+    "cancellation_flexibility":"Cancellation flexibility available",
+    "destination_id": 2,
+    "destination_name": "Sajek",
+    "rating":"4.6",
+    "num_of_review":"99",
+    "rent_per_night":"34"
+  }
+
+]
