@@ -22,7 +22,6 @@ function App() {
   
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <h1 style={{color: 'white'}}>NAme:{loggedInUser.name}</h1>
       <Router className="App">
       <Header></Header>
       <Switch>
