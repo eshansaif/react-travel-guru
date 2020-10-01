@@ -11,18 +11,24 @@ const Home = () => {
     
     const [destination, setDestination] = useState(fakeData);
 
+    const[singleDestination, setSingleDestination] = useState({});
+
+    const showSingleDestination = (singleDest) => {
+        setSingleDestination(singleDest);
+    }
+
     return (
         <React.Fragment>
         <Container fixed>
             <div className="row">
                 <div style={{color: 'white'}} className="col-md-4 text-justify">
-                    <SingleDestination></SingleDestination>
+                    <SingleDestination singleDestination={singleDestination} ></SingleDestination>
                 </div>
                 <div className="col-md-8">
                     <div className="row">
                         
                         {
-                            destination.map(dt => <HomeDestination destination={dt}></HomeDestination> )
+                            destination.map(dt => <HomeDestination destination={dt} showSingleDestination={showSingleDestination}></HomeDestination> )
                         }
                         
                     </div>

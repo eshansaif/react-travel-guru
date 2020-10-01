@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
 import Container from '@material-ui/core/Container';
 import './Header.css';
 import logo from '../../resources/Logo1.png';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
+import * as firebase from "firebase/app";
+import "firebase/auth";
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const useNameStyle = {
+        backgroundColor: '#F9A51A', 
+        color: 'black', 
+        borderRadius: '4px', 
+        padding: '5px'
+    }
+
+    const handleLogout = () => {
+        firebase.auth().signOut()
+        .then(function() {
+            // Sign-out successful.
+            setLoggedInUser({});
+          }).catch(function(error) {
+            // An error happened.
+          });
+    }
+    
     return (
     <React.Fragment >
       <Container fixed className="header">
@@ -20,10 +41,10 @@ const Header = () => {
                     src={logo}/>
                 </Link>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto w-100">
-                <Nav.Link className="w-100">
+            <Navbar.Toggle aria-controls="basic-navbar-nav"  />
+            <Navbar.Collapse id="basic-navbar-nav" className="navbar-light">
+                <Nav className="mr-auto w-75">
+                <Nav.Link className="w-75">
                     <FormControl type="text" placeholder= "Search your Destination..." className="mr-lg-2 w-100" />
                 </Nav.Link> 
                 </Nav>
@@ -32,9 +53,20 @@ const Header = () => {
                     <Nav.Link className="text-light" href="#link">Destination</Nav.Link>
                     <Nav.Link className="text-light" href="#link">Blog</Nav.Link>
                     <Nav.Link className="text-light" href="#link">Contact</Nav.Link>
-                    <Form >
-                    <Button className="yellow-btn">Login</Button>
-                    </Form>
+                    
+                    
+                    {
+                        loggedInUser.email? 
+                        <>
+                            <h4 style={useNameStyle} className="navbar-text">
+                            {loggedInUser.name.replace(/ .*/,'')}<span>(<Link onClick={handleLogout}>Logout</Link>)</span>
+                            </h4>
+                        </>:
+                        <Form >
+                        <Link to="/login"><Button className="yellow-btn">Login</Button></Link>
+                        </Form>
+                    }
+                    
                 </Nav>
                 
             </Navbar.Collapse>
