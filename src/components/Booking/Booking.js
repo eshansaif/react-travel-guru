@@ -33,14 +33,18 @@ const Booking = () => {
   const { dest_id } = useParams();
   console.log(dest_id);
   const selectedDestination = fakeData.find(dt => dt.destination_id === parseFloat(dest_id));
+  // console.log(selectedDestination);
+
+  const [selectedDt, setDelectedDt] = useState(selectedDestination);
+  // console.log(selectedDt);
 
   return (
     <React.Fragment>
       <Container fixed style={{ color: 'white' }}>
         <div className="row">
           <div className="col-md-6">
-            <h1>{selectedDestination.destination_name}</h1>
-            <p style={{ fontSize: '17px' }}>{selectedDestination.destination_desc}</p>
+            <h1>{selectedDt.destination_name}</h1>
+            <p style={{ fontSize: '17px' }}>{selectedDt.destination_desc}</p>
 
           </div>
 
@@ -51,54 +55,50 @@ const Booking = () => {
 
                   <Form.Group controlId="origin">
                     <Form.Label>Origin</Form.Label>
-                    <Form.Control name="origin" className="font-weight-bold" type="text" defaultValue={selectedDestination.origin} placeholder="Origin" disabled />
+                    <Form.Control name="origin" className="font-weight-bold" type="text" defaultValue={selectedDt.origin} placeholder="Origin" disabled />
                   </Form.Group>
 
                   <Form.Group controlId="dest_name">
                     <Form.Label>Destination</Form.Label>
-                    <Form.Control name="dest_name" className="font-weight-bold" type="text" defaultValue={selectedDestination.destination_name} placeholder="Destination" disabled />
+                    <Form.Control name="dest_name" className="font-weight-bold" type="text" defaultValue={selectedDt.destination_name} placeholder="Destination" disabled />
                   </Form.Group>
 
                   <Form.Group>
                     <Form.Row className="row">
                       <Col className="col-6">
                         <Form.Label>From</Form.Label>
-                        <form className={classes.container} noValidate>
                           <TextField
                             name="start_date"
                             id="date"
                             type="date"
-                            defaultValue={selectedDestination.start_date}
+                            defaultValue={selectedDt.start_date}
                             className={classes.textField}
                             InputLabelProps={{
                               shrink: true,
                             }}
                           />
-                        </form>
 
                         {/* <DatePicker selected={startDate} onChange={date => setStartDate(date)} placeholderText="Select End Date"/> */}
                       </Col>
                       <Col className="col-6">
                         <Form.Label>To</Form.Label>
-                        <form className={classes.container} noValidate>
                           <TextField
                             name="end_date"
                             id="date"
                             // label="Birthday"
                             type="date"
-                            defaultValue={selectedDestination.end_date}
+                            defaultValue={selectedDt.end_date}
                             className={classes.textField}
                             InputLabelProps={{
                               shrink: true,
                             }}
                           />
-                        </form>
                       </Col>
                     </Form.Row>
                   </Form.Group>
 
                   <br />
-                  <Link to={`/hotel/${dest_id}`}>
+                  <Link to={`/hotel/${selectedDt.destination_id}`}>
                     <input style={{ width: '100%' }} variant="primary" className="yellow-btn" type="submit" value="Start Booking" />
                   </Link>
                 </Form>
