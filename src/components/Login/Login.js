@@ -248,26 +248,16 @@ const Login = () => {
                                 autoComplete="current-password"
                             />
 
-                            {/* <TextField
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                name="password"
-                                label="Confirm Password"
-                                type="password"
-                                id="confirm-password"
-                                autoComplete="confirm-password"
-                            />               */}
-
                             <div className="d-flex justify-content-between">
                                 <FormControlLabel
                                     control={<Checkbox value="remember" color="primary" />}
                                     label="Remember me"
                                 />
+
                                 <Link style={{ color: "#F9A51A !important" }}>
                                     <p style={{ color: '#F9A51A', fontSize: '1rem', fontWeight: '400', lineHeight: '1.5' }}>Forgot Password?</p>
                                 </Link>
+
                             </div>
 
                             <div className="text-center">

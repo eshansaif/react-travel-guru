@@ -1,10 +1,9 @@
 import React from 'react';
-import { Card, Carousel } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './HomeDestination.css';
 
 const HomeDestination = (props) => {
-    // console.log(props.destination);
     const showSingleDestination = props.showSingleDestination;
     const {destination_name, destination_image} = props.destination;
     return (

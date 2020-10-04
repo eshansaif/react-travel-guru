@@ -59,7 +59,7 @@ const Header = () => {
                         loggedInUser.email? 
                         <>
                             <h4 style={useNameStyle} className="navbar-text">
-                            {loggedInUser.name.replace(/ .*/,'')}<span>(<Link onClick={handleLogout}>Logout</Link>)</span>
+                                {loggedInUser.name ? loggedInUser.name.replace(/ .*/,'') : loggedInUser.name}<span>(<Link onClick={handleLogout}>Logout</Link>)</span>
                             </h4>
                         </>:
                         <Form >

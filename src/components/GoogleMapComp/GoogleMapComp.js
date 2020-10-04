@@ -35,21 +35,21 @@ const GoogleMapComp = () => {
             lng: 92.278693 
           },
         }
-        // ,
-        // {
-        //   name: "Location 2",
-        //   location: { 
-        //     lat: 41.3917,
-        //     lng: 2.1649
-        //   },
-        // },
-        // {
-        //   name: "Location 3",
-        //   location: { 
-        //     lat: 41.3773,
-        //     lng: 2.1585
-        //   },
-        // }
+        ,
+        {
+          name: "Location 2",
+          location: { 
+            lat: 41.3917,
+            lng: 2.1649
+          },
+        },
+        {
+          name: "Location 3",
+          location: { 
+            lat: 41.3773,
+            lng: 2.1585
+          },
+        }
       ];
 
       const [ selected, setSelected ] = useState({});
