@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import Container from '@material-ui/core/Container';
 import { Link, useParams } from 'react-router-dom';
 import fakeData from '../../fakeData/fakeData.json';
-import { useForm } from "react-hook-form";
 import './Booking.css';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Form, Col } from 'react-bootstrap';
 
+//MUI
 import TextField from '@material-ui/core/TextField';
-import "react-datepicker/dist/react-datepicker.css";
 
 
 
@@ -27,21 +26,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+
 const Booking = () => {
 
   const classes = useStyles();
   const { dest_id } = useParams();
+  console.log(dest_id);
   const selectedDestination = fakeData.find(dt => dt.destination_id === parseFloat(dest_id));
-
-
-  const [booking, setBooking] = useState({});
-  console.log(booking);
-
-  const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => console.log(data);
-
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
 
   return (
     <React.Fragment>
@@ -56,16 +47,16 @@ const Booking = () => {
           <div className="col-md-6">
             <div className={classes.root}>
               <Paper className="w-60" style={{ padding: '20px', marginLeft: '20%' }}>
-                <Form className="form" onSubmit={handleSubmit(onSubmit)}>
+                <Form className="form">
 
                   <Form.Group controlId="origin">
                     <Form.Label>Origin</Form.Label>
-                    <Form.Control name="origin" className="font-weight-bold" type="text" defaultValue={selectedDestination.origin} ref={register({ required: true })} placeholder="Origin" disabled />
+                    <Form.Control name="origin" className="font-weight-bold" type="text" defaultValue={selectedDestination.origin} placeholder="Origin" disabled />
                   </Form.Group>
 
                   <Form.Group controlId="dest_name">
                     <Form.Label>Destination</Form.Label>
-                    <Form.Control name="dest_name" className="font-weight-bold" type="text" defaultValue={selectedDestination.destination_name} ref={register({ required: true })} placeholder="Destination" disabled />
+                    <Form.Control name="dest_name" className="font-weight-bold" type="text" defaultValue={selectedDestination.destination_name} placeholder="Destination" disabled />
                   </Form.Group>
 
                   <Form.Group>
@@ -78,7 +69,6 @@ const Booking = () => {
                             id="date"
                             type="date"
                             defaultValue={selectedDestination.start_date}
-                            ref={register({ required: true })}
                             className={classes.textField}
                             InputLabelProps={{
                               shrink: true,
@@ -97,7 +87,6 @@ const Booking = () => {
                             // label="Birthday"
                             type="date"
                             defaultValue={selectedDestination.end_date}
-                            ref={register({ required: true })}
                             className={classes.textField}
                             InputLabelProps={{
                               shrink: true,

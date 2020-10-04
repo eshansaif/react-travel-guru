@@ -16,8 +16,8 @@ const SingleDestination = (props) => {
                         <Link to={`/booking/${destination_id}`}>
                             <Button className="yellow-btn">Booking &#8594; </Button>
                         </Link>
-                    </div> :
-
+                    </div>
+                     :
                     <div>
                         <h1>{fakeData[0].destination_name.toUpperCase()}</h1>
                         <p style={{fontSize:'17px'}}>{fakeData[0].destination_desc}</p>
